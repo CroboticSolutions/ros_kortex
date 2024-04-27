@@ -30,12 +30,13 @@
 
   <group if="$(arg use_gui)">
     <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
-      <rosparam param="source_list">[move_group/fake_controller_joint_states]</rosparam>
+      <!--rosparam param="source_list">[move_group/fake_controller_joint_states]</rosparam!-->
+      <rosparam param="source_list">[my_gen3/joint_states]</rosparam>
     </node>
   </group>
   <group unless="$(arg use_gui)">
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-      <rosparam param="source_list">[move_group/fake_controller_joint_states]</rosparam>
+      <rosparam param="source_list">[my_gen3/joint_states]</rosparam>
     </node>
   </group>
 
@@ -45,7 +46,7 @@
   <!-- Run the main MoveIt! executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(find gen3_move_it_config)/launch/move_group.launch">
     <arg name="allow_trajectory_execution" value="true"/>
-    <arg name="fake_execution" value="true"/>
+    <arg name="fake_execution" value="false"/>
     <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
   </include>
