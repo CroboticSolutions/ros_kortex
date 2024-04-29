@@ -125,10 +125,10 @@ roslaunch gen3_moveit_config demo.launch
 
 ## TODO: 
 
-- [x Build and install package [take care of the conan==1.59 during install] 
+- [x] Build and install package [take care of the conan==1.59 during install] 
 - [x] Start gazebo of the gen3 kinova 
 - [x] Start moveit 
-- [ ] Execute movement with moveit [map controller issues] 
+- [x] Execute movement with moveit [map controller issues] 
 - [ ] Add ros control
 - [ ] Add API for the ctl 
 - [ ] Test existing states for the ctl 
